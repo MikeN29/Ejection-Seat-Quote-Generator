@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--This is a simple webpage which allows a user to select a quantity of Ejection Seats and Accessories and produce a quote/invoice.
+        The page should be viewable on a phone sized screen as well as normal desktop size.
+        I started to attempt to create a function called "generateInvoice" with the intention of this returning the user
+        selections/invoice in the form of an array which could be 'sent' as an order. I have left the workings of this code
+        in the JavaScript file however i think this was beginning to touch on backend and therefore not relevent for this task.
+        I have left the code in so you can see my thought process for the 'next steps' of this project. -->
+        
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="Styling.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700&family=Karla:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Merriweather:ital@0;1&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet"> 
+        <script src="JavaScript.js"></script> 
+        <title>Ejection Seat Quotation Generator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Ejection Seat Quotation Generator</h1>
+              <p>Please use this page to generate your quote. Select a quantity for each item and use the button 'Generate Quote' to show
+                the Quotation. Please call us on 01178766553 to raise your order.</p>
+        </header>
+            <div class="seatItems">
+                <div class="item">
+                    <h2>Mk. 10B Ejection Seat</h2>
+                    <ul class="details">
+                        <li>Aircraft: Hawk T1</li>
+                        <li>Price per Seat: £260,000.00 (VAT ex)</li>
+                        <li>Lead-time: 8 Weeks</li>
+                    </ul>
+                    <img src="https://martin-baker.com/wp-content/uploads/2022/03/eject10-2.jpg" alt="Mk10b Ejection Seat - Hawk T1"
+                        height="300" >
+                     <div class="addButton">
+                        <input id="frm1" min="0" value="0" type="number">
+                    </div>
+                </div>
+                <div class="item">
+                    <h2>Mk. 16 Ejection Seat</h2>
+                    <ul class="details">
+                        <li>Aircraft: Typhoon</li>
+                        <li>Price per Seat: £300,000.00 (VAT ex)</li>
+                        <li>Lead-time: 48 Weeks</li>
+                    </ul>
+                    <img src="https://martin-baker.com/wp-content/uploads/2022/03/eject16a-2.jpg" alt="Mk16 Ejection Seat - Typhoon"
+                        height="300" >
+                        <div class="addButton">
+                            <input id="frm2" min="0" value="0" type="number">
+                        </div>
+                </div>
+                <div class="item">
+                    <h2>Mk. 16e Ejection Seat</h2>
+                    <ul class="details">
+                        <li>Aircraft: F-35 Lightening</li>
+                        <li>Price per Seat: £350,000.00 (VAT ex)</li>
+                        <li>Lead-time: 36 Weeks</li>
+                    </ul>
+                    <img src="https://martin-baker.com/wp-content/uploads/2022/03/eject16e-2.jpg" alt="Mk16e Ejection Seat - F-35 Lightening"
+                        height="300" >
+                         <div class="addButton">
+                             <input id="frm3" min="0" value="0" type="number">
+                        </div>
+                </div>
+                <div class="item">
+                    <h2>Mk. 17 Ejection Seat</h2>
+                    <ul class="details">
+                        <li>Aircraft: Training</li>
+                        <li>Price per Seat: £160,000.00 (VAT ex)</li>
+                        <li>Lead-time: 8 Weeks</li>
+                    </ul>
+                    <img src="https://martin-baker.com/wp-content/uploads/2022/03/eject17-2.jpg" alt="Mk17 Ejection Seat - Training Aircraft"
+                        height="300" >
+                        <div class="addButton">
+                            <input id="frm4" min="0" value="0" type="number">
+                   
+                        </div>
+                </div>
+                <div class="item">
+                    <h2>Accessories/Upgrades</h2>
+                    <ul class="upgrades">
+                        <li>Quick Release Box - £49.99 (VAT ex)
+                        <input id="frm5" min="0" value="0" type="number"> </li>
+                        <li>MA-16 Inertia Reel - £19.99 (VAT ex)
+                            <input id="frm6" min="0" value="0" type="number"> </li>
+                        <li>Manual Life-Raft Inflation System - £19.99 (VAT ex)
+                            <input id="frm7" min="0" value="0" type="number"> </li>
+                        <li>Digital Inline Timer - £39.99 (VAT ex)
+                            <input id="frm8" min="0" value="0" type="number"> </li>
+                        <li>Comfort Cushion - £9.99 (VAT ex)
+                            <input id="frm9" min="0" value="0" type="number"> </li>
+                        </ul>
+                </div>
+                <div class="item">
+                    <h2>Invoice</h2>
+                    <table>
+                        <tr>
+                          <th>Item</th>
+                          <th>Unit Price</th>
+                          <th>Quantity</th>
+                          <th>Sub-Total</th>
+                        </tr>
+                        <tr>
+                          <td id="item1"></td>
+                          <td id="item1price"></td>
+                          <td id="item1qty"></td>
+                          <td id="item1Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item2"></td>
+                            <td id="item2price"></td>
+                            <td id="item2qty"></td>
+                            <td id="item2Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item3"></td>
+                            <td id="item3price"></td>
+                            <td id="item3qty"></td>
+                            <td id="item3Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item4"></td>
+                            <td id="item4price"></td>
+                            <td id="item4qty"></td>
+                            <td id="item4Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item5"></td>
+                            <td id="item5price"></td>
+                            <td id="item5qty"></td>
+                            <td id="item5Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item6"></td>
+                            <td id="item6price"></td>
+                            <td id="item6qty"></td>
+                            <td id="item6Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item7"></td>
+                            <td id="item7price"></td>
+                            <td id="item7qty"></td>
+                            <td id="item7Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item8"></td>
+                            <td id="item8price"></td>
+                            <td id="item8qty"></td>
+                            <td id="item8Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td id="item9"></td>
+                            <td id="item9price"></td>
+                            <td id="item9qty"></td>
+                            <td id="item9Subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Order total:</td>
+                            <td id="demo"></td>
+                        </tr>
+                      </table> 
+                  <button onclick="myFunction();addToInvoice();" class="submitButton" type="submit">Generate Quote</button>
+                  <p class="resultText"></p><p class="result" ></p>
+                </div>
+            </div>
+          
+          <footer>
+            <p>About Contact Us Terms and Conditions</p>
+          </footer>
+    </body>
+</html>
